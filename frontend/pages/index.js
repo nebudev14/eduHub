@@ -11,7 +11,7 @@ export default function Home() {
               <h1 className= 'text-5xl text-transparent bg-clip-text bg-gradient-to-r from-light-pink to-pink-white'>eduHUB</h1>
               <p className='text-white'>A service dedicated to adskfjaskdlfjs</p>
               <a href='/home'>
-                <button className='absolute pb-1 mt-5 bg-pink-white rounded-2xl'>Get Started</button>
+                <button className='absolute p-2 mt-5 duration-200 bg-pink-white rounded-2xl hover:scale-110'>Get Started</button>
               </a>
             </div>
         </div>
