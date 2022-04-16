@@ -2,8 +2,9 @@ import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
+    <div>
       <Component {...pageProps} />
+      <p>slkdfjalksdjfls</p>
     </div>
   );
 }
