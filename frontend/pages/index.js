@@ -14,6 +14,7 @@ export default function Home() {
                 <button className='absolute p-2 mt-5 duration-200 bg-pink-white rounded-2xl hover:scale-110'>Get Started</button>
               </a>
             </div>
+
         </div>
       </div>
     </div>
