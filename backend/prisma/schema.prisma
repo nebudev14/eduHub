@@ -22,3 +22,9 @@ model Teacher {
   name  String?
   posts Post[]
 }
+
+model Student {
+  id    String  @id @default(auto()) @map("_id") @db.ObjectId
+  email String  @unique
+  name  String?
+}
