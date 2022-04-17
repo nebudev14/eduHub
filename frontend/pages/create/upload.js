@@ -69,13 +69,13 @@ export default function Upload() {
           >
             <input
               id="keywords"
-              className="p-4 mb-3 text-xl text-gray-100 bg-gray-800 outline-none w-1/8 rounded-xl"
+              className="p-4 mb-3 text-xl text-gray-100 bg-gray-800 outline-none border border-light-pink border-5 w-1/8 rounded-xl focus:bg-white focus:text-deep-blue focus:border-light-pink focus:scale-105 focus:text-2xl"
               placeholder="Keywords"
               autoComplete="off"
             />
             <button
               type="submit"
-              className="px-2 py-1 mb-4 ml-4 text-2xl border border-gray-400 rounded-xl"
+              className="px-2 py-1 mb-4 ml-4 text-lg border border-light-pink rounded-xl hover:scale-105"
             >
               Add
             </button>
@@ -83,7 +83,7 @@ export default function Upload() {
           <form onSubmit={submitData}>
             <input
               id="title"
-              className="w-full p-4 mb-3 text-3xl text-gray-100 bg-gray-800 outline-none rounded-xl"
+              className="w-full p-2 mb-3 text-xl text-gray-100 bg-gray-800 outline-none border border-light-pink border-5 rounded-xl focus:bg-white focus:text-deep-blue focus:border-light-pink focus:scale-105 focus:text-2xl"
               placeholder="Title"
               autoComplete="off"
               required
@@ -91,7 +91,7 @@ export default function Upload() {
             <br />
             <input
               id="desc"
-              className="w-full p-3 mb-3 text-3xl text-gray-100 bg-gray-800 outline-none rounded-xl"
+              className="w-full p-3 mb-3 text-xl text-gray-100 bg-gray-800 outline-none border border-light-pink border-5 rounded-xl focus:bg-white focus:text-deep-blue focus:border-light-pink focus:scale-105 focus:text-2xl"
               placeholder="Enter a small caption/description"
               autoComplete="off"
               required
@@ -99,7 +99,7 @@ export default function Upload() {
             <br />
             <input
               id="link"
-              className="w-1/2 p-4 mb-3 text-2xl text-gray-100 bg-gray-800 outline-none rounded-xl"
+              className="w-1/2 p-4 mb-3 text-xl text-gray-100 bg-gray-800 outline-none border border-light-pink border-5 rounded-xl focus:bg-white focus:text-deep-blue focus:border-light-pink focus:scale-105 focus:text-2xl"
               placeholder="Video Link (Optional)"
               autoComplete="off"
               onInput={(e) => setLink(e.target.value)}
@@ -107,7 +107,7 @@ export default function Upload() {
             <br />
             <input
               id="name"
-              className="w-1/2 p-4 mb-3 text-2xl text-gray-100 bg-gray-800 outline-none rounded-xl"
+              className="w-1/2 p-4 mb-3 text-xl text-gray-100 bg-gray-800 outline-none border border-light-pink border-5 rounded-xl focus:bg-white focus:text-deep-blue focus:border-light-pink focus:scale-105 focus:text-2xl"
               placeholder="Author name"
               autoComplete="off"
               required
@@ -115,7 +115,7 @@ export default function Upload() {
             <br />
             <input
               id="slug"
-              className="w-1/2 p-4 mb-3 text-2xl text-gray-100 bg-gray-800 outline-none rounded-xl"
+              className="w-1/2 p-4 mb-3 text-xl text-gray-100 bg-gray-800 outline-none border border-light-pink border-5 rounded-xl focus:bg-white focus:text-deep-blue focus:border-light-pink focus:scale-105 focus:text-2xl"
               placeholder="Unique slug"
               autoComplete="off"
               required
@@ -123,16 +123,17 @@ export default function Upload() {
             <br />
             <button
               type="submit"
-              className="px-4 py-2 mt-2 text-3xl duration-200 border border-gray-400 rounded-2xl hover:text-pink-white hover:border-pink-white"
+              className="px-4 py-2 mt-2 text-3xl duration-200 border border-light-pink rounded-2xl hover:text-pink-white hover:border-pink-white hover:scale-105"
             >
               Publish
             </button>
           </form>
         </div>
-        <div>
+        <div className="relative group">
+          <div className="absolute w-full h-full transition duration-1000 rounded-lg opacity-75 from-light-pink to-purple-600 blur bg-gradient-to-r group-hover:opacity-100 group-hover:duration-200"></div>
           <iframe
             src={`https://www.youtube.com/embed/${link.split("=")[1]}`}
-            className="w-full h-full rounded-2xl"
+            className="relative w-full h-full rounded-2xl"
           ></iframe>
         </div>
       </div>
