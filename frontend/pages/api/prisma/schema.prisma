@@ -10,6 +10,7 @@ datasource db {
 model Post {
   id       String   @id @default(auto()) @map("_id") @db.ObjectId
   title    String
+  slug     String   @unique
   desc     String
   link     String
   author   String

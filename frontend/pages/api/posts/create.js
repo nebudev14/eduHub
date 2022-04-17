@@ -8,6 +8,7 @@ export default async function handler(req, res) {
             desc: req.body.desc,
             link: req.body.link,
             author: req.body.author,
+            slug: req.body.slug,
             keywords: req.body.keywords
         }
     })

@@ -23,12 +23,14 @@ export default function Upload() {
       const desc = event.target.desc.value;
       const link = event.target.link.value;
       const author = event.target.name.value;
-      const keywordList = keywords;
+      const slug = event.target.slug.value;
+      const keywordList = keywords; 
       const body = {
         title: title,
         desc: desc,
         link: link,
         author: author,
+        slug: slug,
         keywords: keywordList,
       };
       event.target.title.value = '';
@@ -101,13 +103,20 @@ export default function Upload() {
               placeholder="Video Link (Optional)"
               autoComplete="off"
               onInput={(e) => setLink(e.target.value)}
-              required
             />
             <br />
             <input
               id="name"
               className="w-1/2 p-4 mb-3 text-2xl text-gray-100 bg-gray-800 outline-none rounded-xl"
               placeholder="Author name"
+              autoComplete="off"
+              required
+            />
+            <br />
+            <input
+              id="slug"
+              className="w-1/2 p-4 mb-3 text-2xl text-gray-100 bg-gray-800 outline-none rounded-xl"
+              placeholder="Unique slug"
               autoComplete="off"
               required
             />
