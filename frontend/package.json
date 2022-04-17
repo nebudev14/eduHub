@@ -9,12 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@prisma/client": "^3.12.0",
     "axios": "^0.26.1",
     "dotenv": "^16.0.0",
     "firebase": "^9.6.11",
     "firebase-admin": "^10.0.2",
+    "jsonwebtoken": "^8.5.1",
     "next": "12.1.5",
+    "next-auth": "^4.3.2",
     "nookies": "^2.5.2",
+    "prisma": "^3.12.0",
     "react": "18.0.0",
     "react-dom": "18.0.0"
   },

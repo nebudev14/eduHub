@@ -51,8 +51,7 @@ export default function Browse() {
               eduHUB
             </h1>
             <p className="w-1/2 m-auto text-center text-white">
-              jdasfjakfja faksjf kadfsakjf adskfasdkfj askf jaskfjsak
-              dfjaksfkasdj fksj{" "}
+
             </p>
             <h3 className="text-3xl">Check out what's new!</h3>
             <img className="w-full h-48 mt-12 border-black border-double border-5 rounded-xl"></img>
