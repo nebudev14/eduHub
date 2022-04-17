@@ -19,15 +19,15 @@ module.exports = {
             transform: 'translateY(0)'
           },
           '45%': {
-            transform: 'translateY(10%)'
+            transform: 'translateY(5%)'
           },
           '100%': {
-            transform: 'translateY(-10%)'
+            transform: 'translateY(-5%)'
           },
         }
       },
       animation: {
-        'bop': 'bop 5s ease-in-out infinite alternate'
+        bop: 'bop 5s ease-in-out infinite alternate',
       }
     },
   },
