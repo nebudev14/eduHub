@@ -7,7 +7,7 @@ import axios from "axios";
 export default function Browse(props) {
   const [input, setInput] = useState("");
   const router = useRouter();
-  
+
   return (
     <div className="relative h-screen p-12 bg-deep-blue">
       <div className="relative self-center block h-screen mx-20">
@@ -35,7 +35,7 @@ export default function Browse(props) {
                   stroke="currentColor"
                   stroke-width="2"
                   onClick={() => {
-                    router.push(`/query/${input}`)
+                    router.push(`/query/${input}`);
                   }}
                 >
                   <path
@@ -50,15 +50,23 @@ export default function Browse(props) {
             <h1 className="pt-12 pb-12 font-mono text-5xl text-center text-transparent bg-clip-text bg-gradient-to-r from-light-pink to-pink-white">
               eduHUB
             </h1>
-            <h3 className="p-4 text-3xl text-center border-b-2 border-white">Check out what's new!</h3>
-            <div className="grid grid-cols-2 gap-4 mt-8">
+            <h3 className="p-4 text-3xl text-center border-b-2 border-white">
+              Check out what's new!
+            </h3>
+            <div className="grid grid-cols-2 gap-4 my-8">
               {props.fetchedData.map((post, i) => (
-                
                 <Link key={i} href={`/post/${post.slug}`}>
-                    <div className="px-4 py-6 text-center border border-white rounded-2xl hover:cursor-pointer">
-                      <h1 className="text-2xl">{post.title}</h1>
-                      <h3>By {post.author}</h3>
+                  <div className="px-4 py-6 text-center border border-white rounded-2xl hover:cursor-pointer">
+                    <h1 className="text-2xl">{post.title}</h1>
+                    <h3>By {post.author}</h3>
+                    <div className="mt-6 text-left ">
+                      {post.keywords.map((keyword, i) => (
+                        <div key={i} className="inline px-2 py-1 ml-2 border text-pink-white border-pink-white rounded-2xl">
+                          {keyword}
+                        </div>
+                      ))}
                     </div>
+                  </div>
                 </Link>
               ))}
             </div>
@@ -72,10 +80,10 @@ export default function Browse(props) {
 export const getStaticProps = async () => {
   const getData = await axios.get("http://localhost:3000/api/posts/");
   const fetchedData = getData.data;
-  
+  console.log(fetchedData);
   return {
     props: {
-      fetchedData
-    }
-  }
-}
+      fetchedData,
+    },
+  };
+};
