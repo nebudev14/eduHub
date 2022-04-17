@@ -3,7 +3,7 @@ import { useState } from "react";
 
 export default function Upload() {
   const [keywords, setKeywords] = useState([]);
-  const [link, setLink] = useState('');
+  const [link, setLink] = useState("");
 
   const addKeyword = async (event) => {
     event.preventDefault();
@@ -11,6 +11,33 @@ export default function Upload() {
       setKeywords([...keywords, event.target.keywords.value]);
     }
     event.target.keywords.value = "";
+  };
+
+  const submitData = async (event) => {
+    try {
+      event.preventDefault();
+      const title = event.target.title.value;
+      const desc = event.target.desc.value;
+      const link = event.target.link.value;
+      const author = event.target.name.value;
+      const keywordList = keywords;
+      const body = {
+        title: title,
+        desc: desc,
+        link: link,
+        author: author,
+        keywords: keywordList,
+      };
+      event.target.title.value = '';
+
+      await fetch("/api/posts/create", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      });
+    } catch (e) {
+      console.log("Error: " + e);
+    }
   };
 
   return (
@@ -28,36 +55,6 @@ export default function Upload() {
               </div>
             ))}
           </div>
-          <form>
-            <input
-              id="title"
-              className="w-full p-4 mb-3 text-3xl text-gray-100 bg-gray-800 outline-none rounded-xl"
-              placeholder="Title"
-              autoComplete="off"
-            />
-            <br />
-            <input
-              id="desc"
-              className="w-full p-3 mb-3 text-3xl text-gray-100 bg-gray-800 outline-none rounded-xl"
-              placeholder="Enter a small caption/description"
-              autoComplete="off"
-            />
-            <br />
-            <input
-              id="link"
-              className="w-1/2 p-4 mb-3 text-2xl text-gray-100 bg-gray-800 outline-none rounded-xl"
-              placeholder="Video Link (Optional)"
-              autoComplete="off"
-              onInput={(e) => setLink(e.target.value)}
-            />
-            <br />
-            <input
-              id="name"
-              className="w-1/2 p-4 mb-3 text-2xl text-gray-100 bg-gray-800 outline-none rounded-xl"
-              placeholder="Author name"
-              autoComplete="off"
-            />
-          </form>
           <form
             className="flex items-center justify-start"
             onSubmit={addKeyword}
@@ -75,14 +72,53 @@ export default function Upload() {
               Add
             </button>
           </form>
+          <form onSubmit={submitData}>
+            <input
+              id="title"
+              className="w-full p-4 mb-3 text-3xl text-gray-100 bg-gray-800 outline-none rounded-xl"
+              placeholder="Title"
+              autoComplete="off"
+              required
+            />
+            <br />
+            <input
+              id="desc"
+              className="w-full p-3 mb-3 text-3xl text-gray-100 bg-gray-800 outline-none rounded-xl"
+              placeholder="Enter a small caption/description"
+              autoComplete="off"
+              required
+            />
+            <br />
+            <input
+              id="link"
+              className="w-1/2 p-4 mb-3 text-2xl text-gray-100 bg-gray-800 outline-none rounded-xl"
+              placeholder="Video Link (Optional)"
+              autoComplete="off"
+              onInput={(e) => setLink(e.target.value)}
+              required
+            />
+            <br />
+            <input
+              id="name"
+              className="w-1/2 p-4 mb-3 text-2xl text-gray-100 bg-gray-800 outline-none rounded-xl"
+              placeholder="Author name"
+              autoComplete="off"
+              required
+            />
+            <br />
+            <button
+              type="submit"
+              className="px-4 py-2 mt-2 text-3xl duration-200 border border-gray-400 rounded-2xl hover:text-pink-white hover:border-pink-white"
+            >
+              Publish
+            </button>
+          </form>
         </div>
         <div>
           <iframe
             src={`https://www.youtube.com/embed/${link.split("=")[1]}`}
-            style={{height: '450px', width: '650px'}}
-            className="w-screen rounded-2xl"
-          >
-          </iframe>
+            className="w-full h-full rounded-2xl"
+          ></iframe>
         </div>
       </div>
     </div>
