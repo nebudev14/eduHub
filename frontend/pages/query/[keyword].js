@@ -29,7 +29,7 @@ export default function SearchResults(props) {
 
 export const getServerSideProps = async context => {
     const {keyword} = context.params;
-    const data = await axios.get(`https://eduhub-sigma.vercel.app/api/posts/keyword/${keyword}`);
+    const data = await axios.get(`http://localhost:3000/api/posts/keyword/${keyword}`);
     const fetchedData = data.data;
     
     return {

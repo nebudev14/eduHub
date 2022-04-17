@@ -38,7 +38,7 @@ export default function Post(props) {
 export const getServerSideProps = async (context) => {
   const { slug } = context.params;
   const getData = await axios.get(
-    `https://eduhub-sigma.vercel.app/api/posts/slug/${slug}`
+    `http://localhost:3000/api/posts/slug/${slug}`
   );
   const fetchedData = getData.data;
 

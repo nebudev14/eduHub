@@ -5,7 +5,7 @@ export default function Register() {
     event.preventDefault();
     const email = event.target.email.value;
     const name = event.target.name.value;
-    axios.post("https://eduhub-sigma.vercel.app/account/create", {
+    axios.post("http://localhost:3000/account/create", {
       name: name,
       email: email,
       

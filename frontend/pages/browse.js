@@ -78,7 +78,8 @@ export default function Browse(props) {
 }
 
 export const getStaticProps = async () => {
-  const getData = await axios.get("https://eduhub-sigma.vercel.app/api/posts/");
+  const getData = await axios.get("http://localhost:3000/api/posts/");
+
   const fetchedData = getData.data;
   console.log(fetchedData);
   return {
