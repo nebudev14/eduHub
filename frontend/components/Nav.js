@@ -1,13 +1,12 @@
 const Nav = () => {
     return (
-<<<<<<< HEAD
         <div className="relative w-1/2 py-8 text-white rounded-xl self-center m-auto t-12">
             <div className="relative flex w-full justify-between font-mono">
                 <a href = '/' className="text-transparent bg-clip-text bg-gradient-to-r from-light-pink to-pink-white rounded-2xl p-2 hover:scale-105 duration-200">eduHUB</a>
                 
                 
                 <div className="flex relative">
-                    <a className="self-center hover:scale-105">Create</a>
+                    <a className="self-center hover:scale-105 hover:cursor-pointer" href="/create/upload">Create</a>
                     <a href='/account/register' className="self-center">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -20,12 +19,6 @@ const Nav = () => {
                         </svg>
                     </a>
                 </div>
-=======
-        <div className="relative self-center w-1/2 py-8 m-auto text-2xl text-white rounded-xl t-12">
-            <div className="relative flex justify-between w-full font-mono">
-                <a href = '/' className="p-2 text-transparent duration-200 bg-clip-text bg-gradient-to-r from-light-pink to-pink-white rounded-2xl hover:scale-105">eduHUB</a>
-                <a className="self-end hover:scale-105 hover:cursor-pointer" href="/create/upload">Create</a>
->>>>>>> b7a098c7ff8ed2f5a2baa41aed1295235a7f6e83
             </div>
             
         </div>

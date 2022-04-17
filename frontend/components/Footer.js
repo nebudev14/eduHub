@@ -2,9 +2,13 @@ const Footer = () => {
   return (
     <div className="relative flex justify-between w-full h-full p-12 text-white bg-black">
       <div className="flex flex-col justify-between w-9/12 h-full">
-        <p className="text-center">banner</p>
-        <p className="text-center">eduHUB</p>
-        <div className="flex flex-row justify-between w-full h-full">
+       
+        <div className="flex px-8">
+          <img src="/blob.png" className="text-center w-1/4 h-1/4"></img>
+          <p className="text-center w-3/4 text-4xl align-text-bottom">eduHUB</p>
+        </div>
+
+        <div className="flex flex-row justify-between w-full h-full px-8">
           <p>fb</p>
           <p>insta</p>
           <p>twitter</p>
