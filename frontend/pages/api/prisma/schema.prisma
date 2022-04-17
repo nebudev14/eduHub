@@ -9,24 +9,9 @@ datasource db {
 
 model Post {
   id       String   @id @default(auto()) @map("_id") @db.ObjectId
-  slug     String   @unique
   title    String
-  body     String
-  author   Teacher  @relation(fields: [authorId], references: [id])
-  authorId String   @db.ObjectId
+  desc     String
+  link     String
+  author   String
   keywords String[]
-}
-
-model Teacher {
-  id       String  @id @default(auto()) @map("_id") @db.ObjectId
-  email    String  @unique
-  name     String?
-  password String
-  posts    Post[]
-}
-
-model Student {
-  id    String  @id @default(auto()) @map("_id") @db.ObjectId
-  email String  @unique
-  name  String?
 }
