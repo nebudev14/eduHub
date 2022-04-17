@@ -33,14 +33,14 @@ export default function Browse(props) {
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
-                  stroke-width="2"
+                  strokeWidth="2"
                   onClick={() => {
                     router.push(`/query/${input}`);
                   }}
                 >
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                     d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
                   />
                 </svg>
@@ -51,7 +51,7 @@ export default function Browse(props) {
               eduHUB
             </h1>
             <h3 className="p-4 text-3xl text-center border-b-2 border-white">
-              Check out what's new!
+              Check out what&apos;s new!
             </h3>
             <div className="grid grid-cols-2 gap-4 my-8">
               {props.fetchedData.map((post, i) => (
@@ -78,7 +78,7 @@ export default function Browse(props) {
 }
 
 export const getStaticProps = async () => {
-  const getData = await axios.get("http://localhost:3000/api/posts/");
+  const getData = await axios.get("https://eduhub-sigma.vercel.app/api/posts/");
   const fetchedData = getData.data;
   console.log(fetchedData);
   return {
@@ -87,3 +87,4 @@ export const getStaticProps = async () => {
     },
   };
 };
+
