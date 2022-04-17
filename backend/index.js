@@ -13,16 +13,20 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/posts", async (req, res) => {
-  const posts = prisma.post.findMany();
+  const posts = prisma.post.findMany({
+  });
   res.json(posts);
 });
 
 app.get("/posts/:id", async (req, res) => {
+  console.log(req.params.id)
   const post = prisma.post.findUnique({
     where: { id: req.params.id },
   });
   res.json(post);
 });
+
+
 
 app.post("/account/create", async (req, res) => {
   const result = await prisma.teacher.create({

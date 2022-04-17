@@ -8,12 +8,13 @@ datasource db {
 }
 
 model Post {
-  id       String  @id @default(auto()) @map("_id") @db.ObjectId
-  slug     String  @unique
+  id       String   @id @default(auto()) @map("_id") @db.ObjectId
+  slug     String   @unique
   title    String
   body     String
-  author   Teacher @relation(fields: [authorId], references: [id])
-  authorId String  @db.ObjectId
+  author   Teacher  @relation(fields: [authorId], references: [id])
+  authorId String   @db.ObjectId
+  keywords String[]
 }
 
 model Teacher {
