@@ -54,21 +54,7 @@ export default function Browse(props) {
               Check out what&apos;s new!
             </h3>
             <div className="grid grid-cols-2 gap-4 my-8">
-              {props.fetchedData.map((post, i) => (
-                <Link key={i} href={`/post/${post.slug}`}>
-                  <div className="px-4 py-6 text-center border border-white rounded-2xl hover:cursor-pointer">
-                    <h1 className="text-2xl">{post.title}</h1>
-                    <h3>By {post.author}</h3>
-                    <div className="mt-6 text-left ">
-                      {post.keywords.map((keyword, i) => (
-                        <div key={i} className="inline px-2 py-1 ml-2 border text-pink-white border-pink-white rounded-2xl">
-                          {keyword}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </Link>
-              ))}
+
             </div>
           </div>
         </div>
@@ -77,13 +63,14 @@ export default function Browse(props) {
   );
 }
 
-export const getStaticProps = async () => {
-  const getData = await axios.get("http://localhost:3000/api/posts/");
-  const fetchedData = getData.data;
-  console.log(fetchedData);
-  return {
-    props: {
-      fetchedData,
-    },
-  };
-};
+// export const getStaticProps = async () => {
+//   const getData = await axios.get("http://localhost:3000/api/posts/");
+//   const data = fetch("/api/send", { method: "POST" }).then ((res) => console.log(res.json()));
+//   const fetchedData = getData.data;
+//   console.log(fetchedData);
+//   return {
+//     props: {
+//       fetchedData,
+//     },
+//   };
+// };
