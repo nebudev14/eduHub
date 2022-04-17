@@ -1,9 +1,12 @@
 import { getSession } from "next-auth/react";
 import { useState } from "react";
+import { useRouter } from "next/router";
 
 export default function Upload() {
   const [keywords, setKeywords] = useState([]);
   const [link, setLink] = useState("");
+
+  const router = useRouter();
 
   const addKeyword = async (event) => {
     event.preventDefault();
@@ -35,6 +38,9 @@ export default function Upload() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
       });
+      
+      router.push('/browse')
+
     } catch (e) {
       console.log("Error: " + e);
     }
