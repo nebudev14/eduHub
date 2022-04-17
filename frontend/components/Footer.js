@@ -17,17 +17,17 @@ const Footer = () => {
       </div>
 
       <div className="flex flex-col justify-between w-1/2">
-        <p className="text-center">Browse Subjects</p>
-        <div className="flex flex-col p-5 text-center">
-          <a>Biology</a>
-          <a>beep</a>
-          <a>boop</a>
-          <a>beep</a>
+        <p className="text-center text-lg">Browse Subjects</p>
+        <div className="flex flex-col p-5 text-center space-y-1">
+          <a className="hover:underline hover:cursor-pointer text-sm">Biology</a>
+          <a className="hover:underline hover:cursor-pointer text-sm">Chemistry</a>
+          <a className="hover:underline hover:cursor-pointer text-sm">Physics</a>
+          <a className="hover:underline hover:cursor-pointer text-sm">Math</a>
         </div>
       </div>
 
       <div className="flex flex-col w-1/2">
-        <p className="text-center">Join Our Newsletter</p>
+        <p className="text-center text-lg ">Join Our Newsletter!</p>
         <div className="flex flex-row p-6 text-center">
           <textarea className="w-3/4 text-deep-blue"></textarea>
           <button className="flex-row w-1/2 bg-pink-white text-deep-blue">

@@ -6,7 +6,7 @@ export default function Home() {
     <div className='relative w-full h-screen bg-deep-blue'>
       <div className='relative self-center block h-screen mx-20'>
         <div className='relative flex flex-row-reverse self-center justify-between h-screen mx-20'>
-          <img src='/sharpboi.png' className='w-96 m-auto border-8 border-black border-double h-1/2 rounded-2xl'></img>
+          <img src='/sharpboi.png' className='animate-float w-96 m-auto border-8 border-black border-double h-1/2 rounded-2xl'></img>
             <div className='px-16 py-16 m-auto font-mono'>
               <h1 className= 'text-5xl text-transparent bg-clip-text bg-gradient-to-r from-light-pink to-pink-white'>eduHUB</h1>
               <p className='text-white'>A service dedicated to adskfjaskdlfjs</p>
