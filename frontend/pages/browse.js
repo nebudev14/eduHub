@@ -51,7 +51,7 @@ export default function Browse(props) {
               eduHUB
             </h1>
             <h3 className="p-4 text-3xl text-center border-b-2 border-white">
-              Check out what's new!
+              Check out what&apos;s new!
             </h3>
             <div className="grid grid-cols-2 gap-4 my-8">
               {props.fetchedData.map((post, i) => (
