@@ -1,6 +1,6 @@
 const Nav = () => {
   return (
-    <div className="relative self-center w-1/2 py-8 m-auto text-white rounded-xl t-12">
+    <div className="relative self-center w-1/2 py-8 m-auto text-2xl text-white rounded-xl t-12">
       <div className="relative flex justify-between w-full font-mono">
         <a
           href="/"

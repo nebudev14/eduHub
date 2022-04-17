@@ -50,7 +50,7 @@ export default function Browse(props) {
             <h1 className="pt-12 pb-12 font-mono text-5xl text-center text-transparent bg-clip-text bg-gradient-to-r from-light-pink to-pink-white">
               eduHUB
             </h1>
-            <h3 className="p-4 text-3xl text-center border-b-2 border-white">
+            <h3 className="p-4 pt-0 pb-8 text-3xl text-center border-b-2 border-white">
               Check out what's new!
             </h3>
             <div className="grid grid-cols-2 gap-4 my-8">
