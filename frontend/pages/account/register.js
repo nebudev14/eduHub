@@ -1,16 +1,16 @@
 import axios from "axios";
 
 export default function Register() {
-//   const getData = async (event) => {
-//     event.preventDefault();
-//     const email = event.target.email.value;
-//     const name = event.target.name.value;
-//     axios.post("http://localhost:4000/account/create", {
-//       name: name,
-//       email: email,
+  const getData = async (event) => {
+    event.preventDefault();
+    const email = event.target.email.value;
+    const name = event.target.name.value;
+    axios.post("https://eduhub-sigma.vercel.app/account/create", {
+      name: name,
+      email: email,
       
-//     });
-//   };
+    });
+  };
 
   return (
     <div className="relative h-screen my-auto">
@@ -19,7 +19,7 @@ export default function Register() {
       </h1>
       <form
         className="flex flex-col items-center justify-center px-16 m-8"
-        
+        onSubmit={getData}
       >
         <input
           id="email"
@@ -58,3 +58,4 @@ export default function Register() {
     </div>
   );
 }
+
