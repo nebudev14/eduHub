@@ -9,7 +9,7 @@ export default function Browse(props) {
   const router = useRouter();
 
   return (
-    <div className="relative h-screen p-12 bg-deep-blue">
+    <div className="relative h-full p-12 bg-deep-blue">
       <div className="relative self-center block h-screen mx-20">
         <div className="relative flex flex-row-reverse items-start self-center justify-between h-screen mx-20 ">
           <div className="mx-auto">
