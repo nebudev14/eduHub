@@ -9,6 +9,7 @@ export default function Register() {
       name: name,
       email: email,
     });
+    
   };
 
   return (
