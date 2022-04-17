@@ -10,7 +10,11 @@
   },
   "dependencies": {
     "axios": "^0.26.1",
+    "dotenv": "^16.0.0",
+    "firebase": "^9.6.11",
+    "firebase-admin": "^10.0.2",
     "next": "12.1.5",
+    "nookies": "^2.5.2",
     "react": "18.0.0",
     "react-dom": "18.0.0"
   },
