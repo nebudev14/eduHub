@@ -12,10 +12,10 @@ export default function Register() {
   };
 
   return (
-    <div>
-      <h1 className="text-4xl text-pink-600">Register</h1>
+    <div className="relative">
+      <h1 className="text-5xl font-light font-sans text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-light-pink p-2 text-center">Register</h1>
       <form
-        className="flex flex-col items-center justify-center px-16 py-12 mb-8 border border-black"
+        className="flex flex-col items-center justify-center px-16 m-8"
         onSubmit={getData}
       >
         <input
@@ -23,7 +23,7 @@ export default function Register() {
           name="email"
           type="text"
           autoComplete="off"
-          className="p-3 border border-b-0 border-black textBox rounded-t-3xl"
+          className="bg-white/30 text-deep-blue p-3 border-black rounded-xl m-2 hover:bg-white/40 focus:bg-white focus:w-2/5 transition-all"
           required
           placeholder="Email"
         />
@@ -32,13 +32,13 @@ export default function Register() {
           name="name"
           type="text"
           autoComplete="off"
-          className="p-3 border border-black textBox rounded-b-3xl"
+          className="bg-white/30 text-deep-blue p-3 border-black rounded-xl m-2 hover:bg-white/40 focus:bg-white focus:w-2/5 transition-all" 
           required
           placeholder="Name"
         />
         <button
           type="submit"
-          className="px-2 py-2 mt-4 duration-200 border border-black rounded-2xl hover:scale-110"
+          className="w-1/5 bg-light-pink/80 text-deep-blue p-3 border-black rounded-xl m-2 hover:bg-light-pink/100 transition-all"
         >
           Sign up
         </button>

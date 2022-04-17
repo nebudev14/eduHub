@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <div className="relative flex justify-between w-full h-full p-12 text-white">
+    <div className="relative flex justify-between w-full h-full p-12 text-white bg-black">
       <div className="flex flex-col justify-between w-9/12 h-full">
         <p className="text-center">banner</p>
         <p className="text-center">eduHUB</p>
