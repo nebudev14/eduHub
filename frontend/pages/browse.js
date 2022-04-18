@@ -9,7 +9,7 @@ export default function Browse(props) {
   const router = useRouter();
 
   return (
-    <div className="relative h-screen p-12 bg-deep-blue">
+    <div className="relative h-full p-12 bg-deep-blue">
       <div className="relative self-center block h-screen mx-20">
         <div className="relative flex flex-row-reverse items-start self-center justify-between h-screen mx-20 ">
           <div className="mx-auto">
@@ -22,7 +22,7 @@ export default function Browse(props) {
                     name="postQuery"
                     type="text"
                     autoComplete="off"
-                    placeHolder="Enter a keyword"
+                    placeholder="Enter a keyword"
                     className="w-full p-4 pr-32 text-gray-100 bg-gray-900 rounded-2xl"
                     onInput={(e) => setInput(e.target.value)}
                   />
@@ -33,14 +33,14 @@ export default function Browse(props) {
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
-                  stroke-width="2"
+                  strokeWidth="2"
                   onClick={() => {
                     router.push(`/query/${input}`);
                   }}
                 >
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                     d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
                   />
                 </svg>
@@ -50,8 +50,8 @@ export default function Browse(props) {
             <h1 className="pt-12 pb-12 font-mono text-5xl text-center text-transparent bg-clip-text bg-gradient-to-r from-light-pink to-pink-white">
               eduHUB
             </h1>
-            <h3 className="p-4 pt-0 pb-8 text-3xl text-center border-b-2 border-white">
-              Check out what's new!
+            <h3 className="p-4 text-3xl text-center border-b-2 border-white">
+              Check out what&apos;s new!
             </h3>
             <div className="grid grid-cols-2 gap-4 my-8">
               {props.fetchedData.map((post, i) => (
@@ -79,11 +79,12 @@ export default function Browse(props) {
 
 export const getStaticProps = async () => {
   const getData = await axios.get("http://localhost:3000/api/posts/");
+
   const fetchedData = getData.data;
-  console.log(fetchedData);
   return {
     props: {
       fetchedData,
     },
   };
 };
+

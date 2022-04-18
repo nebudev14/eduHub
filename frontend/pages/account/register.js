@@ -1,15 +1,13 @@
 import axios from "axios";
 
+import { useAuth } from "../../components/contexts/AuthContext";
+
 export default function Register() {
   const getData = async (event) => {
     event.preventDefault();
     const email = event.target.email.value;
     const name = event.target.name.value;
-    axios.post("http://localhost:4000/account/create", {
-      name: name,
-      email: email,
-      
-    });
+    const password = event.target.pw.value;
   };
 
   return (
@@ -58,3 +56,4 @@ export default function Register() {
     </div>
   );
 }
+
