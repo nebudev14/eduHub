@@ -1,13 +1,28 @@
 import axios from "axios";
-
+import { useState } from "react";
 import { useAuth } from "../../components/contexts/AuthContext";
 
+import Error from "../../components/Error";
+
 export default function Register() {
+  const { signup } = useAuth();
+
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+
   const getData = async (event) => {
     event.preventDefault();
     const email = event.target.email.value;
-    const name = event.target.name.value;
     const password = event.target.pw.value;
+
+    try {
+      setError("");
+      setLoading(true);
+      await signup(email, password);
+    } catch {
+      setError("Failed to create acconut");
+    }
+    setLoading(false);
   };
 
   return (
@@ -19,6 +34,7 @@ export default function Register() {
         className="flex flex-col items-center justify-center px-16 m-8"
         onSubmit={getData}
       >
+        {error !== '' ? <Error text={'An error has occurred'} /> : null}
         <input
           id="email"
           name="email"
@@ -27,15 +43,6 @@ export default function Register() {
           className="p-3 m-2 transition-all border-black bg-white/30 text-deep-blue rounded-xl hover:bg-white/40 focus:bg-white focus:w-2/5"
           required
           placeholder="Email"
-        />
-        <input
-          id="name"
-          name="name"
-          type="text"
-          autoComplete="off"
-          className="p-3 m-2 transition-all border-black bg-white/30 text-deep-blue rounded-xl hover:bg-white/40 focus:bg-white focus:w-2/5"
-          required
-          placeholder="Name"
         />
         <input
           id="pw"
@@ -48,6 +55,7 @@ export default function Register() {
         />
         <button
           type="submit"
+          disabled={loading}
           className="w-1/5 p-3 m-2 transition-all border-black bg-light-pink/80 text-deep-blue rounded-xl hover:bg-light-pink/100"
         >
           Sign up
@@ -56,4 +64,3 @@ export default function Register() {
     </div>
   );
 }
-
